@@ -1,0 +1,12 @@
+<div class="three columns"><small>
+    <a href="index"><img title="↓markdown↓ CMS" alt="Small markdown CMS Logo" src="/md/images/markdown-cms-logo-tiny.png"/> Powered by ↓markdown↓ CMS</a><br/>
+    <a href="mailto:one-eye.net@live.com?subject=↓markdown↓ CMS Enquiry">one-eye.net@live.com</a>
+</small></div>
+<div class="three columns"><small>
+    <a href="about-markdown-cms">About</a><br/>
+</small></div>
+<div class="three columns"><small>
+    <a href="download/markdown-cms.zip">Source Code</a><br/>
+    <a href="markdown-cms-license">License</a><br/>
+</small></div>
+<div class="three columns"><small>&copy; 2015 Daniel S. Fowler</small></div>

@@ -1,0 +1,14 @@
+# markdown cms URL Rewrite Rules
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ md/index.php [L]
+
+# Index request
+RewriteRule ^$ md/index.php [L]
+
+#markdown file request
+RewriteRule \.md$ md/index.php [L]
+</IfModule>
+
