@@ -1,4 +1,5 @@
 <?php
+ //markdown CMS default config (same as ../site-config.php until changed for new website)
  $MD_SETTINGS = array(
         "SITE_NAME" => "↓markdown↓CMS↓",
         "SITE_LOGO" => "/md/images/markdown-cms-logo.png",

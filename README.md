@@ -20,10 +20,11 @@ Folder and files are structure and content. Start by creating an **index.md** fi
 
 ## Set Site Name and Logo
 
-Copy **md-config.php** from the **md** folder into the website root folder and rename it **site-config.php**. Set the values for the site name and logo.
+Upload an image for the website logo. Copy **md/md-config.php** to **site-config.php** (i.e. in the public root folder). Edit **site-config.php** to set the values for the site name and the logo.
 
 ## Further Information
 
 * [Home Page](http://one-eye.net/md/ "↓markdown↓ CMS Home Page")
 * ↓markdown↓ CMS on [GitHub](https://github.com/GR8DAN/markdown-CMS "↓markdown↓ CMS on GitHub")
+* Articles to [Build a Website from Scratch with ↓markdown↓ CMS](http://one-eye.net/md_cms/build-a-website-from-scratch "Articles on Using ↓markdown↓ CMS"). 
 
