@@ -1,12 +1,12 @@
 <div class="three columns"><small>
-    <a href="http://one-eye.net/md"><img title="↓markdown↓ CMS" alt="Small markdown CMS Logo" src="/md/images/markdown-cms-logo-tiny.png"/> Powered by ↓markdown↓ CMS</a><br/>
-    <a href="mailto:one-eye.net@live.com?subject=↓markdown↓ CMS Enquiry">one-eye.net@live.com</a>
+    <a href="http://tekeye.uk/md"><img title="↓markdown↓ CMS" alt="Small markdown CMS Logo" src="/md/images/markdown-cms-logo-tiny.png"/> Powered by ↓markdown↓ CMS</a><br/>
+    <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#097;&#110;&#064;&#116;&#101;&#107;&#101;&#121;&#101;&#046;&#117;&#107;?subject=↓markdown↓ CMS Enquiry">&#100;&#097;&#110;&#064;&#116;&#101;&#107;&#101;&#121;&#101;&#046;&#117;&#107;</a>
 </small></div>
 <div class="three columns"><small>
-    <a href="about-markdown-cms">About</a><br/>
+    <a href="/md/about-markdown-cms">About</a><br/>
 </small></div>
 <div class="three columns"><small>
-    <a href="http://one-eye.net/downloads/markdown-cms.zip">Source Code</a><br/>
-    <a href="markdown-cms-license">License</a><br/>
+    <a href="http://tekeye.uk/downloads/markdown-cms.zip">Source Code</a><br/>
+    <a href="/md/markdown-cms-license">License</a><br/>
 </small></div>
 <div class="three columns"><small>&copy; 2015 Daniel S. Fowler</small></div>

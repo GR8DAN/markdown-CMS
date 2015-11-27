@@ -1,5 +1,5 @@
 * [Home](/md/index "↓markdown↓ CMS Home")
 * [About](/md/about-markdown-cms "About ↓markdown↓ CMS")
 * [License](/md/markdown-cms-license "↓markdown↓ CMS License")
-* [Download](http://one-eye.net/downloads/markdown-cms.zip "↓markdown↓ CMS Download Zip")
+* [Download](http://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Download Zip")
 * [GitHub](https://github.com/GR8DAN/markdown-CMS "↓markdown↓ CMS on GitHub")

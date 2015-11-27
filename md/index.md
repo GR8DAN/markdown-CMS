@@ -15,7 +15,7 @@ Updated: 2015-11-21
 
 __Note:__ If you obtain, use or distribute ↓markdown↓ CMS you agree to the [license](/md/markdown-cms-license "↓markdown↓ License").
 
-For further introductory information and a small start guide see the [About](/md/about-markdown-cms "About ↓markdown↓ CMS and Getting Started") page. There are several online tutorials showing how to [Build a Website from Scratch with ↓markdown↓ CMS](http://one-eye.net/md_cms/build-a-website-from-scratch "How to build a website with ↓markdown↓ CMS").
+For further introductory information and a small start guide see the [About](/md/about-markdown-cms "About ↓markdown↓ CMS and Getting Started") page. There are several online tutorials showing how to [Build a Website from Scratch with ↓markdown↓ CMS](http://tekeye.uk/md_cms/build-a-website-from-scratch "How to build a website with ↓markdown↓ CMS").
 
 ## Why a Simple Flat File no Database CMS?
 
