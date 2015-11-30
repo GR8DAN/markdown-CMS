@@ -142,7 +142,7 @@
                                "/footer\.[0-9]\.md$/",
                                "/404/",
                                "/menu.main.md$/",
-                               "/google6a3638391b07f107.html$/");
+                               "/^google[0-9a-f]+\.html$/");
         foreach($file_filters as $file_filter) {
             if(preg_match($file_filter,$basename)==1) {
                 //matches filter so don't display
