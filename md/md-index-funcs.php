@@ -157,9 +157,10 @@
 	 * Function Md_MakeContentLinks creates array of page titles and URLS
      * @param $filenames the files to get the titles from
      * @param $rel_loc the relative location of the files
+     * @param $xmlsitemap the xmlsitemap class instance for the xml sitemap
      * @return array containing the titles (sorted alphabetically) and links
 	 */
-     function Md_MakeContentLinks($filenames, $rel_loc) {
+     function Md_MakeContentLinks($filenames, $rel_loc, $xmlsitemap) {
         $pages = array();
         foreach ($filenames as $filename) {
             //ignore system files
@@ -175,11 +176,48 @@
                     //no title default to file name as text
                     $pages[$linkURL]=pathinfo($linkURL, PATHINFO_BASENAME);
                 }
+                //xml sitemap processing
+                //get date of file to determine last update
+                $lastmod=date("Y-m-d",filemtime($filename));
+                $changefreq=Md_FileAgeCheck($filename,$xmlsitemap);
+                if(isset($md_meta['priority']))
+                    $priority=$md_meta['priority'];
+                else
+                    $priority="0.5";
+                //set up the xml sitemap entry
+                $xmlsitemap->additem($linkURL, $priority, $changefreq, $lastmod);
             }
             //sort array on title
             uasort($pages, "strnatcmp");
         }
+        //write the sitemap
+        $xmlsitemap->endSitemap();
         return $pages;
      }
 
+     /**
+	 * Function Md_FileAgeCheck checks age of page for xml sitemap
+     * @param $thisfile full path to check age against current time
+     * @param $xmlmapobj stores date of most recent page
+     */
+     function Md_FileAgeCheck($thisfile, $xmlmapobj) {
+        $currenttime=time();
+        $filetime=filemtime($thisfile);
+        if(isset($xmlmapobj))
+            if($filetime > $xmlmapobj->getNewestPageTime()) $xmlmapobj->setNewestPageTime($filetime);
+        $agediff=$currenttime-$filetime;
+        if($agediff < strtotime("+1 hour",$currenttime)-$currenttime)
+            return "always";
+        elseif($agediff < strtotime("+1 day",$currenttime)-$currenttime)
+            return "hourly";
+        elseif($agediff < strtotime("+1 week",$currenttime)-$currenttime)
+            return "daily";
+        elseif($agediff < strtotime("+1 month",$currenttime)-$currenttime)
+            return "weekly";
+        elseif($agediff < strtotime("+1 year",$currenttime)-$currenttime)
+            return "monthly";
+        elseif($agediff < strtotime("+2 years",$currenttime)-$currenttime)
+            return "yearly";
+        return "never";
+     }
 ?>

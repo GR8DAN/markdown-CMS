@@ -1,5 +1,6 @@
 * [Home](/md/index "↓markdown↓ CMS Home")
-* [About](/md/about-markdown-cms "About ↓markdown↓ CMS")
+* [README](/README "↓markdown↓ CMS README File")
 * [License](/md/markdown-cms-license "↓markdown↓ CMS License")
 * [Download](http://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Download Zip")
 * [GitHub](https://github.com/GR8DAN/markdown-CMS "↓markdown↓ CMS on GitHub")
+* [About](http://tekeye.uk/md_cms/about-markdown-cms "About ↓markdown↓ CMS")

@@ -15,4 +15,6 @@
                     'md'=>'*');
     //Array used to rename entries on Index page
     $INDEX_RENAME=array();
+
+    date_default_timezone_set("UTC");   //change as required
 ?>

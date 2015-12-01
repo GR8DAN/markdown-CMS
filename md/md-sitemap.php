@@ -5,6 +5,7 @@
      */
     include_once "md-utils.php";        //Utility and other functions
     include_once "md-index-funcs.php";  //Specific indexing functions
+
     /*
     ** Get some settings.
     */
@@ -21,11 +22,20 @@
     $parsedown = new Parsedown();
 
     /**
+     * Class to to build XML sitemap.
+     */
+    include_once 'xmlsitemap.php';
+	$xmlmap = new xmlsitemap(rtrim($MD_SETTINGS['HOME'],"/"));
+    
+    /**
      * Walk website to set up
      * data arrays for indexing
      */
     //All dirs
     $rootdir = $_SERVER['DOCUMENT_ROOT'];
+    //Store xml sitemap in root
+    $xmlmap->setpath($rootdir.DIRECTORY_SEPARATOR);
+    //Get sub dirs
     $dirs = Md_GetDirectories($rootdir,TRUE);
     //Ignore some directories ($NO_INDEX)
     $dirs = Md_FilterDirectories($dirs, $NO_INDEX);
@@ -70,8 +80,8 @@
             //add the link anchor from the tag list
             echo '<hr/>';
             echo '<a name="'.strtolower(str_replace(' ', '', $tag)).'"></a>'.'<h3>'.$tag.'</h3>';
-            //add page titles (or URLs) to an array
-            $pagetitles=Md_MakeContentLinks($files, $href);
+            //add page titles (or URLs) to an array and URLs to XML sitemap
+            $pagetitles=Md_MakeContentLinks($files, $href, $xmlmap);
             //generate links to page with title as text
             foreach ($pagetitles as $linkURL => $pagetitle) {
                 echo '<a href="'.$linkURL.'">'.$pagetitle.'</a><br/>';

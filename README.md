@@ -1,4 +1,4 @@
-# ↓markdown↓ CMS
+# ↓markdown↓ CMS README
 
 A simple, fast, lean, flat file (no database) CMS for easy and quick website generation and publishing. If you can type text you can build a website.
 
@@ -20,11 +20,12 @@ Folder and files are structure and content. Start by creating an **index.md** fi
 
 ## Set Site Name and Logo
 
-Upload an image for the website logo. Copy **md/md-config.php** to **site-config.php** (i.e. in the public root folder). Edit **site-config.php** to set the values for the site name and the logo.
+Upload an image for the website logo. Copy **md/md-config.php** to **site-config.php** (i.e. into the public root folder). Edit **site-config.php** to set the values for the site name and the logo.
 
 ## Further Information
 
 * ↓markdown↓ CMS [Home Page](http://tekeye.uk/md/ "↓markdown↓ CMS Home Page")
 * ↓markdown↓ CMS on [GitHub](https://github.com/GR8DAN/markdown-CMS "↓markdown↓ CMS on GitHub")
-* Articles to [Build a Website from Scratch with ↓markdown↓ CMS](http://tekeye.uk/md_cms/build-a-website-from-scratch "Articles on Using ↓markdown↓ CMS"). 
+* Articles to [Build a Website from Scratch with ↓markdown↓ CMS](http://tekeye.uk/md_cms/build-a-website-from-scratch "Articles on Using ↓markdown↓ CMS")
+* [License](/md/markdown-cms-license "↓markdown↓ CMS License")
 
