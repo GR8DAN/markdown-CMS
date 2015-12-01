@@ -23,7 +23,7 @@ class xmlsitemap {
 	private $path;
 	private $filename = 'sitemap';
 	private $current_item = 0;
-	private $current_sitemap = 0;
+	private $current_sitemap = -1;  //Set to one on first added item
     private $newest_page = 0;
 
 	const EXT = '.xml';
@@ -158,13 +158,7 @@ class xmlsitemap {
 	 */
 	private function startSitemap() {
 		$this->setWriter(new XMLWriter());
-		if ($this->getCurrentSitemap()) {
-			$this->getWriter()->openURI($this->getPath() . $this->getFilename() . self::SEPERATOR . $this->getCurrentSitemap() . self::EXT);
-            echo $this->getPath() . $this->getFilename() . self::SEPERATOR . $this->getCurrentSitemap() . self::EXT."<br/>";
-		} else {
-			$this->getWriter()->openURI($this->getPath() . $this->getFilename() . self::EXT);
-            echo $this->getPath() . $this->getFilename() . self::EXT ."<br/>";
-		}
+		$this->getWriter()->openURI($this->getSitemapFilename($this->getCurrentSitemap()));    //>0 then indexed sitemaps
 		$this->getWriter()->startDocument('1.0', 'UTF-8');
 		$this->getWriter()->setIndent(true);
 		$this->getWriter()->startElement('urlset');
@@ -183,9 +177,13 @@ class xmlsitemap {
 	public function addItem($loc, $priority = self::DEFAULT_PRIORITY, $changefreq = NULL, $lastmod = NULL) {
 		if (($this->getCurrentItem() % self::ITEM_PER_SITEMAP) == 0) {
 			if ($this->getWriter() instanceof XMLWriter) {
-				$this->endSitemap();
+                //current sitemap
+				$this->getWriter()->endElement();
+		        $this->getWriter()->endDocument();
 			}
+            //Start a new sitemap
 			$this->startSitemap();
+            //Count them (zero based)
 			$this->incCurrentSitemap();
 		}
 		$this->incCurrentItem();
@@ -216,27 +214,18 @@ class xmlsitemap {
 	}
 
 	/**
-	 * Finalizes tags of sitemap XML document.
-	 *
-	 */
-	public function endSitemap() {
-		if (!$this->getWriter()) {
-			$this->startSitemap();
-		}
-		$this->getWriter()->endElement();
-		$this->getWriter()->endDocument();
-	}
-
-	/**
 	 * Writes Google sitemap index for generated sitemap files
 	 *
 	 * @param string $loc Accessible URL path of sitemaps
 	 * @param string|int $lastmod The date of last modification of sitemap. Unix timestamp or any English textual datetime description.
 	 */
 	public function createSitemapIndex($loc, $lastmod = 'Today') {
-		$this->endSitemap();
-		$indexwriter = new XMLWriter();
-		$indexwriter->openURI($this->getPath() . $this->getFilename() . self::SEPERATOR . self::INDEX_SUFFIX . self::EXT);
+        //End last sitemap
+		$this->getWriter()->endElement();
+		$this->getWriter()->endDocument();
+        //Do the index file
+        $indexwriter = new XMLWriter();
+		$indexwriter->openURI($this->getIndexFilename());
 		$indexwriter->startDocument('1.0', 'UTF-8');
 		$indexwriter->setIndent(true);
 		$indexwriter->startElement('sitemapindex');
@@ -250,6 +239,42 @@ class xmlsitemap {
 		$indexwriter->endElement();
 		$indexwriter->endDocument();
 	}
+
+    /**
+	 * Generate a sitemap filename
+     *
+     * @param int $filenaum number suffix, if > 0 returns name-x else just name
+     * @return string the sitemap file name
+	 */
+	private function getSitemapFilename($filenum) {
+        if($filenum>0)
+            return $this->getPath() . $this->getFilename() . self::SEPERATOR . $this->getCurrentSitemap() . self::EXT;
+        else
+            return $this->getPath() . $this->getFilename() . self::EXT;
+    }
+
+    /**
+     * Get the file name for the Index file for all sitemaps generated
+	 *
+     * @return string the index file name
+	 */
+	private function getIndexFilename() {
+        return $this->getPath() . $this->getFilename() . self::SEPERATOR . self::INDEX_SUFFIX . self::EXT;
+    }
+
+    /**
+	 * Writes Google sitemap files for generated sitemaps, can call instead of createSitemapIndex for single sitmaps
+	 */
+	public function createSitemap() {
+        if($this->getCurrentSitemap()>0) {
+            //More than one (zero indexed count), do index
+            $this->createSitemapIndex($this->getDomain()."/", 'Today');
+        } else {
+            //just end our single (zeroth) one
+            $this->getWriter()->endElement();
+		    $this->getWriter()->endDocument();
+        }
+    }
 
     /**
 	 * Returns newest page time (if set)
@@ -268,5 +293,4 @@ class xmlsitemap {
 		$this->newest_page = $pagetime;
         return $this->newest_page;
 	}
-
 }

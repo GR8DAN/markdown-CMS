@@ -1,7 +1,7 @@
 <?php
     include_once "md-utils.php";
     /* While developing */
-    Md_ShowErrors();
+    //Md_ShowErrors();
     
     /*
     ** Get the request.

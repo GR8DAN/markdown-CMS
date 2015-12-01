@@ -88,6 +88,8 @@
             }
         }
     }
+    //write the sitemap
+    $xmlmap->createSitemap();    
     ?>
                 </div>
                 <div class="three columns">

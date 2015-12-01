@@ -190,8 +190,6 @@
             //sort array on title
             uasort($pages, "strnatcmp");
         }
-        //write the sitemap
-        $xmlsitemap->endSitemap();
         return $pages;
      }
 
