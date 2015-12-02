@@ -176,16 +176,18 @@
                     //no title default to file name as text
                     $pages[$linkURL]=pathinfo($linkURL, PATHINFO_BASENAME);
                 }
-                //xml sitemap processing
-                //get date of file to determine last update
-                $lastmod=date("Y-m-d",filemtime($filename));
-                $changefreq=Md_FileAgeCheck($filename,$xmlsitemap);
-                if(isset($md_meta['priority']))
-                    $priority=$md_meta['priority'];
-                else
-                    $priority="0.5";
-                //set up the xml sitemap entry
-                $xmlsitemap->additem($linkURL, $priority, $changefreq, $lastmod);
+                //xml sitemap generated if class active
+                if(isset($xmlsitemap)) {
+                    //get date of file to determine last update
+                    $lastmod=date("Y-m-d",filemtime($filename));
+                    $changefreq=Md_FileAgeCheck($filename,$xmlsitemap);
+                    if(isset($md_meta['priority']))
+                        $priority=$md_meta['priority'];
+                    else
+                        $priority="0.5";
+                    //set up the xml sitemap entry
+                    $xmlsitemap->additem($linkURL, $priority, $changefreq, $lastmod);
+                }
             }
             //sort array on title
             uasort($pages, "strnatcmp");

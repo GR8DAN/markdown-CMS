@@ -35,6 +35,12 @@
     $rootdir = $_SERVER['DOCUMENT_ROOT'];
     //Store xml sitemap in root
     $xmlmap->setpath($rootdir.DIRECTORY_SEPARATOR);
+    //update xml sitemap refresh rate
+    if(array_key_exists('XML_SITEMAP_REFRESH',$MD_SETTINGS))
+        $xmlmap->setRefreshLimit($MD_SETTINGS['XML_SITEMAP_REFRESH']);    
+    //don't produce sitemap if recent one exists
+    if(!$xmlmap->checkDate())
+        unset($xmlmap);
     //Get sub dirs
     $dirs = Md_GetDirectories($rootdir,TRUE);
     //Ignore some directories ($NO_INDEX)
@@ -80,16 +86,24 @@
             //add the link anchor from the tag list
             echo '<hr/>';
             echo '<a name="'.strtolower(str_replace(' ', '', $tag)).'"></a>'.'<h3>'.$tag.'</h3>';
-            //add page titles (or URLs) to an array and URLs to XML sitemap
-            $pagetitles=Md_MakeContentLinks($files, $href, $xmlmap);
+            //add page titles (or URLs) to an array and URLs to XML sitemap (if active)
+            if(isset($xmlmap))
+                $pagetitles=Md_MakeContentLinks($files, $href, $xmlmap);
+            else
+                $pagetitles=Md_MakeContentLinks($files, $href, NULL);
             //generate links to page with title as text
             foreach ($pagetitles as $linkURL => $pagetitle) {
                 echo '<a href="'.$linkURL.'">'.$pagetitle.'</a><br/>';
             }
         }
     }
-    //write the sitemap
-    $xmlmap->createSitemap();    
+    //complete xml site if active
+    if(isset($xmlmap)) {
+        //add the full site Index page itself
+        $xmlmap->additem("/md/md-sitemap.php","0.4");
+        //write the sitemap
+        $xmlmap->createSitemap();
+    }
     ?>
                 </div>
                 <div class="three columns">

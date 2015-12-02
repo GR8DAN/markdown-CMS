@@ -25,6 +25,7 @@ class xmlsitemap {
 	private $current_item = 0;
 	private $current_sitemap = -1;  //Set to one on first added item
     private $newest_page = 0;
+    private $refresh_limit = '-1 week'; //Regenerate sitemap is older than this
 
 	const EXT = '.xml';
 	const SCHEMA = 'http://www.sitemaps.org/schemas/sitemap/0.9';
@@ -293,4 +294,45 @@ class xmlsitemap {
 		$this->newest_page = $pagetime;
         return $this->newest_page;
 	}
+
+    /**
+	 * Returns refresh limit (if set)
+	 *
+	 * @return string refresh limit in PHP format, e.g. "-1 week"
+	 */
+	public function getRefreshLimit() {
+		return $this->refresh_limit;
+	}
+
+	/**
+	 * Sets refresh limit (beyond which sitemap gets updated)
+	 * 
+     * @param string refresh limit in PHP format, e.g. "-1 week"
+     * @return string refresh limit passed in
+	 */
+	public function setRefreshLimit( $refreshlimit ) {
+		$this->refresh_limit = $refreshlimit;
+        return $this->refresh_limit;
+	}
+
+    /**
+	 * Check the sitemap date to see if it needs updating
+	 * 
+     * @return boolean TRUE if sitemap needs updating
+	 */
+    public function checkDate() {
+        $bret=FALSE;    //assume no update to start
+        $filetime=0;    //stores timestamp of sitemap file
+        // does the index file exists
+        if( file_exists( $this->getIndexFilename() ) )
+            //* if so check date
+            $filetime=filemtime($this->getIndexFilename());
+        else if( file_exists( $this->getSitemapFilename(0) ) )
+            // see if the single sitemap file exists
+            // get timestamp 
+            $filetime=filemtime($this->getSitemapFilename(0));
+        if( $filetime < strtotime($this->refresh_limit) )
+            $bret=TRUE;
+        return $bret;
+    }
 }
