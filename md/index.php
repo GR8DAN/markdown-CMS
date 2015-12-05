@@ -60,16 +60,24 @@
     /*
     ** Now do the HTML page.
     */
+    /* Get page meta data and separate content*/
+    $md_meta = Md_ParsePage($content);
+    /* Sort out web page title */
+    if(array_key_exists('title',$md_meta))
+        $title=$md_meta['title']." | ".$MD_SETTINGS['SITE_NAME'];
+    else
+        $title=$MD_SETTINGS['SITE_NAME'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $MD_SETTINGS['SITE_NAME'];?></title>
         <?php
+            //Set title
+            echo "<title>".$title."</title>\n";
             //Set favicon
-            echo "<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>";
+            echo "<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>\n";
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
@@ -87,8 +95,6 @@
                 <div class="nine columns">
                 <?php
                     echo "<main>";
-                    /* Get page meta data and separate content*/
-                    $md_meta = Md_ParsePage($content);
                     /* Echo content */
                     echo $parsedown->text($md_meta["DISPLAY_CONTENT"]);
                     /* Add article signature as microdata */
