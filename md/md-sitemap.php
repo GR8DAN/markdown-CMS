@@ -53,10 +53,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Index - <?php $MD_SETTINGS['SITE_NAME'];?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
+            //Set title
+            echo "<title>Index | ".$MD_SETTINGS['SITE_NAME']."</title>\n";
             //Set favicon
-            echo "<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>";
+            echo "<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>\n";
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
