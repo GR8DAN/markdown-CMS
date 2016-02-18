@@ -1,10 +1,10 @@
 /*
 Title: ↓markdown↓ CMS for Simple Web Publishing
-Description: This index description will go in the meta description tag
+Description: Introduces ↓markdown↓ CMS, the flat file, no db, easy and simple content management system for web publishing. (Note this index description will go in the meta description tag.)
 Author: Daniel S. Fowler
 Tags: markdown, cms, introduction, description, website, publishing
 Published: 2015-06-17
-Updated: 2015-12-01
+Updated: 2015-12-16
 */
 
 # Web Publishing Made as Simple as Typing Text
