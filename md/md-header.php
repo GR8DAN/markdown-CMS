@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="one columns">
+    <div class="one column">
         <?php
             echo "<a href=\"{$MD_SETTINGS['HOME']}\">";
             echo "<img title=\"{$MD_SETTINGS['SITE_NAME']}\" alt=\"{$MD_SETTINGS['SITE_NAME']} Logo\" src=\"{$MD_SETTINGS['SITE_LOGO']}\" />";
@@ -11,10 +11,16 @@
             echo "<h1 class=\"sitetitle\">{$MD_SETTINGS['SITE_NAME']}</h1>";
         ?>
     </div>
-    <div class="eight columns">
+    <div class="five columns">
         <?php
             //Check for info.top file
             echo Md_ProcessText($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.$MD_SETTINGS['INFO_TOP_FILE'],$parsedown);
+        ?>
+    </div>
+    <div class="three columns">
+        <?php
+            //Check for search.txt code file
+            echo Md_ProcessText($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.$MD_SETTINGS['SITE_SEARCH'],$parsedown);
         ?>
     </div>
 </div>
