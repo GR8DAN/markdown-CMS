@@ -1,6 +1,7 @@
 <footer>
+    <hr/>
     <div class="row">
-        <hr/><?php
+        <?php
             /* For each footer.x.md file in the site root a div is created into
             ** into which the text from that file is converted to HTML and inserted.
             ** x must be a single number between 0 and 9, lowest added first.
