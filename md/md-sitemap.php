@@ -77,7 +77,7 @@
     <?php
     // Code to produce the list of links to content
     echo '<h2>Categories</h2>';
-    echo '<h3>'.Md_SectionAnchors($dirindex,$MD_SETTINGS['EXTENSIONS']).'</h3>';
+    echo '<strong>'.Md_SectionAnchors($dirindex,$MD_SETTINGS['EXTENSIONS']).'</strong>';
     //For all sections add the local page links and 
     //each page associated with it.
     foreach($dirindex as $tag => $href) {
