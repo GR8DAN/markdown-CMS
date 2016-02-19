@@ -7,7 +7,9 @@
         "HOME" => Md_RequestRoot(),
         "EXTENSIONS" => "md,php,html,txt,zip",
         "INFO_TOP_FILE" => "info.top.txt",
-        "PAGE_END_FILE" => "page.end.txt"
+        "SITE_SEARCH" => "search.code.txt",
+        "PAGE_END_FILE" => "page.end.txt",
+        "XML_SITEMAP_REFRESH" => "-1 week"
     );
 
     //Filters for index page and sitemap.
