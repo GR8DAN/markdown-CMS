@@ -27,10 +27,10 @@
     /*
     ** Is content in root or in a sub directory 
     */
-    if($path!="/md" and $path!="\\")
+    if($path!="/md" and $path!=DIRECTORY_SEPARATOR)
         $filename="..".$path."/".$filename;
-    elseif($path=="\\")
-        $filename="../".$filename;    
+    elseif($path==DIRECTORY_SEPARATOR)
+        $filename="../".$filename;
     /*
     ** Class to perform Markdown parsing.
     */
