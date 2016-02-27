@@ -80,6 +80,7 @@
     echo '<strong>'.Md_SectionAnchors($dirindex,$MD_SETTINGS['EXTENSIONS']).'</strong>';
     //For all sections add the local page links and 
     //each page associated with it.
+    $total_pages = 0;
     foreach($dirindex as $tag => $href) {
         //get a list of all files in the given directory
         $files=Md_FilesInWebDir($href,$MD_SETTINGS['EXTENSIONS']);
@@ -96,9 +97,12 @@
             //generate links to page with title as text
             foreach ($pagetitles as $linkURL => $pagetitle) {
                 echo '<a href="'.$linkURL.'">'.$pagetitle.'</a><br/>';
+                $total_pages++;
             }
         }
     }
+    //Echo number of pages
+     echo '<hr/><p><small>Total Pages:'.$total_pages.'</small></p>';
     //complete xml site if active
     if(isset($xmlmap)) {
         //add the full site Index page itself
