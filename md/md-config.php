@@ -1,5 +1,6 @@
 <?php
  //markdown CMS default config (same as ../site-config.php until changed for new website)
+ if(function_exists("Md_RequestRoot")){
  $MD_SETTINGS = array(
         "SITE_NAME" => "↓markdown↓CMS↓",
         "SITE_LOGO" => "/md/images/markdown-cms-logo.png",
@@ -11,7 +12,7 @@
         "PAGE_END_FILE" => "page.end.txt",
         "XML_SITEMAP_REFRESH" => "-1 week"
     );
-
+ }
     //Filters for index page and sitemap.
     $NO_INDEX=array('images'=>'*',
                     'md'=>'*');
