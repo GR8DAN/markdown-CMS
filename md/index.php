@@ -81,6 +81,26 @@
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
+        <?php
+            //Does article require code syntax highlighting?
+            if(!empty($md_meta["syntax"])) {
+                //Default style if none specified
+                if(empty($md_meta["synstyle"])) {
+                    $md_meta["synstyle"]="default";
+                }
+                if(strtolower($md_meta["syntax"])=="yes") {
+                    //Add cdn hosted syntax highlighter
+                    echo "<link rel=\"stylesheet\" href=\"//cdn.jsdelivr.net/highlight.js/9.2.0/styles/{$md_meta['synstyle']}.min.css\">\n";
+                    echo "<script src=\"//cdn.jsdelivr.net/highlight.js/9.2.0/highlight.min.js\"></script>\n";
+                } elseif(strtolower($md_meta["syntax"])!="no"){
+                    //Link to local syntax highligher
+                    //Syntax setting set to name of folder under md folder
+                    echo "<link rel=\"stylesheet\" href=\"/md/{$md_meta['syntax']}/styles/{$md_meta['synstyle']}.css\">\n";
+                    echo "<script src=\"/md/{$md_meta['syntax']}/highlight.pack.js\"></script>\n";
+                }
+                echo "<script>hljs.initHighlightingOnLoad();</script>";
+            }
+        ?>
     </head>
     <body>
         <div class="container">
