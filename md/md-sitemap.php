@@ -113,6 +113,12 @@
     ?>
                 </div>
                 <div class="three columns">
+                    <?php
+                        /*
+                        ** Process the sidebar
+                        */
+                        include_once "md-sidebar.php";
+                    ?>          
                 </div>
             </div>
             <?php
