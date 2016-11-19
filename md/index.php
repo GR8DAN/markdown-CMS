@@ -100,6 +100,9 @@
                 }
                 echo "<script>hljs.initHighlightingOnLoad();</script>";
             }
+            //Handle cookie consent (https://cookieconsent.insites.com/)
+            if(!array_key_exists('NO_COOKIE_MESSAGE',$MD_SETTINGS))
+                echo file_get_contents("md-cookie.txt");
         ?>
     </head>
     <body>

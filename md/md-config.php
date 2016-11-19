@@ -10,6 +10,7 @@
         "INFO_TOP_FILE" => "info.top.txt",
         "SITE_SEARCH" => "search.code.txt",
         "PAGE_END_FILE" => "page.end.txt",
+        //"NO_COOKIE_MESSAGE" => "",
         "XML_SITEMAP_REFRESH" => "-1 week"
     );
  }
