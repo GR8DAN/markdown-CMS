@@ -4,7 +4,7 @@ Description: Introduces ↓markdown↓ CMS, the flat file, no db, easy and simpl
 Author: Daniel S. Fowler
 Tags: markdown, cms, introduction, description, website, publishing
 Published: 2015-06-17
-Updated: 2015-12-16
+Updated: 2016-11-19
 */
 
 # Web Publishing Made as Simple as Typing Text
@@ -15,7 +15,7 @@ Updated: 2015-12-16
 
 __Note:__ If you obtain, use or distribute ↓markdown↓ CMS you agree to the [license](/md/markdown-cms-license "↓markdown↓ License").
 
-View the [README](/README "↓markdown↓ CMS README") for a short overview and quick start or see the [About ↓markdown↓ CMS](http://tekeye.uk/md/about-markdown-cms "About ↓markdown↓ CMS and Getting Started") page. There are several online tutorials covering various subjects in how to [Build a Website from Scratch with ↓markdown↓ CMS](http://tekeye.uk/md_cms/build-a-website-from-scratch "How to build a website with ↓markdown↓ CMS").
+View the [README](/README "↓markdown↓ CMS README") for a short overview and quick start or see the [About ↓markdown↓ CMS](http://tekeye.uk/md_cms/about-markdown-cms "About ↓markdown↓ CMS and Getting Started") page. There are several online tutorials covering various subjects in how to [Build a Website from Scratch with ↓markdown↓ CMS](http://tekeye.uk/md_cms/build-a-website-from-scratch "How to build a website with ↓markdown↓ CMS").
 
 ## Why a Simple Flat File no Database CMS?
 
