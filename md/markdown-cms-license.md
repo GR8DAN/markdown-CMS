@@ -4,12 +4,12 @@ Description: This is the license (licence) information Page for ↓markdown↓ C
 Author: Daniel S. Fowler
 Tags: markdown, cms, license, licence, website, publishing
 Published: 2015-06-17
-Updated: 2015-12-01
+Updated: 2017-01-01
 */
 
 # License Terms for Use of the Software
 
-↓markdown↓ CMS - Copyright (c) 2015, 2016 Mr.D.S.Fowler
+↓markdown↓ CMS - Copyright (c) 2015-2017 Mr.D.S.Fowler
 
 If you obtain a copy of ↓markdown↓ CMS or any derivative works you agree to the following conditions. If you do not agree do not use or distribute ↓markdown↓ CMS or works derived from it.
 
