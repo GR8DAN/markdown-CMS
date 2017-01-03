@@ -123,6 +123,9 @@
                     /* Add article signature as microdata */
                     echo Md_ArticleSig($md_meta);
                     echo "</main>";
+                    /* Add sharing buttons */
+                    if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS))
+                        include_once "md-share.php";
                 ?>            
                 </div>
                 <div class="three columns">
