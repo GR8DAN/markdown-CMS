@@ -6,9 +6,11 @@ A simple, fast, lean, flat file (no database) CMS for easy and quick website gen
 
 A HTTP server (e.g. Apache) with PHP installed, that's all. Great for low cost hosting plans. A web server with PHP is supplied as standard by nearly all web hosting providers. ↓markdown↓ CMS is easy to configure for a Virtual Private Server (VPS), dedicated server or any PC. 
 
+(In the following it is assumed that **example.com** will be replaced with your own registered domain name, or **localhost** for a test or website development computer.)
+
 ## Install
 
-Drop [the code](http://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Zip File") on the web server. Just extract the zip contents to the public HTML root folder (if using the [GitHub zip file](https://github.com/GR8DAN/markdown-CMS/archive/master.zip "↓markdown↓ CMS from GitHub") extract everything in zip file's first folder). If PHP is enabled and the web server supports URL rewrite, as most do, then ↓markdown↓ CMS is ready (e.g. example.com/md).
+Drop [the code](http://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Zip File") on to the web server. Just extract the zip contents to the public HTML root folder (if using the [GitHub zip file](https://github.com/GR8DAN/markdown-CMS/archive/master.zip "↓markdown↓ CMS from GitHub") extract everything in zip file's first folder). If PHP is enabled and the web server supports URL rewrite, as most do, then ↓markdown↓ CMS is ready (e.g. example.com/md).
 
 ## Add Files
 
