@@ -21,8 +21,8 @@
         $social_links .= '<a href="https://www.reddit.com/submit?url='.$page_url.'&title='.$page_title.'" target="_blank"><img src="/md/images/reddit-but.png" alt="Submit to reddit" onmouseover="this.src=\'/md/images/reddit-but-hov.png\';" onmouseout="this.src=\'/md/images/reddit-but.png\';"/></a>';
         //print
         $social_links .= '<a href="javascript:;" onclick="window.print()"><img src="/md/images/print-but.png" alt="Print Page" onmouseover="this.src=\'/md/images/print-but-hov.png\';" onmouseout="this.src=\'/md/images/print-but.png\';"/></a>';
-        //email
-        $social_links .= '<a href="mailto:?subject=I%20saw%20this&body=http%3A%2F%2Ftekeye.uk%2F"><img src="/md/images/email-but.png" alt="Email" onmouseover="this.src=\'/md/images/email-but-hov.png\';" onmouseout="this.src=\'/md/images/email-but.png\';"/></a>';
+        //email button optional
+        //$social_links .= '<a href="mailto:?subject='.$page_title.'&body='.$page_url.'"><img src="/md/images/email-but.png" alt="Email" onmouseover="this.src=\'/md/images/email-but-hov.png\';" onmouseout="this.src=\'/md/images/email-but.png\';"/></a>';
         echo $social_links;
     }
 ?>
