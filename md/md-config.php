@@ -11,6 +11,7 @@
         "SITE_SEARCH" => "search.code.txt",
         "PAGE_END_FILE" => "page.end.txt",
         "NO_COOKIE_MESSAGE" => "",
+        //"SHARE_BUTTONS" => "",
         "XML_SITEMAP_REFRESH" => "-1 week"
     );
  }
