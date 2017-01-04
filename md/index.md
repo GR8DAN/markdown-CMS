@@ -4,7 +4,7 @@ Description: Introduces ↓markdown↓ CMS, the flat file, no db, easy and simpl
 Author: Daniel S. Fowler
 Tags: markdown, cms, introduction, description, website, publishing
 Published: 2015-06-17
-Updated: 2016-11-19
+Updated: 2017-01-04
 */
 
 # Web Publishing Made as Simple as Typing Text
@@ -35,5 +35,6 @@ Technology should be easy and satisfying to use. The well established CMSs are g
 * Mobile device friendly (the style sheet is a responsive design for different screen sizes).
 * Work locally, e.g. using WebMatrix, or remotely. Sync via FTP, rsync, WinSCP, Git or zip upload.
 * Automatic web site backup via cloud storage, e.g. Dropbox, Google Drive or OneDrive.
+* Has a main article area, a sidebar for common content or advertising, and social sharing buttons.
 
 ![↓markdown↓ CMS Registered Trademark](/md/images/markdown-reg.png "↓markdown↓ CMS")
