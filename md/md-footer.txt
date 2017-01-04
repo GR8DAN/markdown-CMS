@@ -3,7 +3,7 @@
     <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#097;&#110;&#064;&#116;&#101;&#107;&#101;&#121;&#101;&#046;&#117;&#107;?subject=↓markdown↓ CMS Enquiry">&#100;&#097;&#110;&#064;&#116;&#101;&#107;&#101;&#121;&#101;&#046;&#117;&#107;</a>
 </small></div>
 <div class="three columns"><small>
-    <a href="http://tekeye.uk/md/about-markdown-cms">About</a><br/>
+    <a href="http://tekeye.uk/md_cms/about-markdown-cms">About</a><br/>
     <a href="/README">README</a>
 </small></div>
 <div class="three columns"><small>
