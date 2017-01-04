@@ -17,6 +17,7 @@ The ↓markdown↓ CMS source code, data, graphics, documentation and configurat
 
 The ↓markdown↓ CMS software is free (as in freedom) and any modifications to it must be readily attainable. The name ↓markdown↓ (a UK registered trademark) and the ↓markdown↓ CMS logos are used for support and marketing activities and must not be used for any derived works or modified versions of the software. ↓markdown↓ CMS software is licensed under the terms of the [GNU Affero General Public License V3](http://www.gnu.org/licenses/agpl-3.0.html "AGPLv3") (AGPLv3). A copy of the license is [provided with the software](agpl.txt "AGPLv3"). 
 
+The ↓markdown↓ CMS cascading style sheet (CSS) is derived from [Skeleton CSS](http://getskeleton.com/ "Skeleton CSS Home Page"), and [normalize.css](https://necolas.github.io/normalize.css/ "normalize.css Home Page") is used to baseline browser styles. ↓markdown↓ CMS converts text to HTML via [Parsedown](http://parsedown.org/ "Parsedown Home Page"). The XML sitemap feature is derived from [sitemap-php](https://github.com/o/sitemap-php "sitemap-php on GitHub"). A cookie message is displayed using [Silktide's Insites Cookie Consent](https://cookieconsent.insites.com/ "Cookie Consent Home"). All are licensed under The MIT License.
 
 ## The MIT License (MIT)
 
