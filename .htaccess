@@ -12,3 +12,5 @@ RewriteRule ^$ md/index.php [L]
 RewriteRule \.md$ md/index.php [L]
 </IfModule>
 
+# Don't list directories
+Options -Indexes
