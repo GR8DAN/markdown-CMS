@@ -46,8 +46,14 @@
         //no new site home page yet
         $content = file_get_contents("index.md");
     } else {
-        //header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
-        $content = file_get_contents("404.md");
+        //no content, 404 it
+        $is404 = TRUE;  //used to prevent share buttons showing
+        header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+        $filename="404.md";
+        if(file_exists("..".DIRECTORY_SEPARATOR.$filename))
+            $content = file_get_contents("..".DIRECTORY_SEPARATOR.$filename);
+        else
+            $content = file_get_contents($filename);
     }
     /*
     ** Get some settings.
@@ -69,7 +75,7 @@
         $title=$MD_SETTINGS['SITE_NAME'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php if(array_key_exists('LANGUAGE',$MD_SETTINGS)) echo $MD_SETTINGS['LANGUAGE']; else echo 'en-GB'; ?>">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,7 +83,7 @@
             //Set title
             echo "<title>".$title."</title>\n";
             //Set favicon
-            echo "<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>\n";
+            echo "\t\t<link rel=\"icon\" href=\"{$MD_SETTINGS['FAVICON']}\"/>\n";
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
@@ -124,7 +130,7 @@
                     echo Md_ArticleSig($md_meta);
                     echo "</main>";
                     /* Add sharing buttons */
-                    if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS))
+                    if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
                 ?>            
                 </div>
