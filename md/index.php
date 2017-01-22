@@ -119,20 +119,22 @@
                 */
                 include_once "md-header.php";
             ?>
-            <article>
             <div class="row">
                 <div class="nine columns">
                 <?php
-                    echo "<main>";
+                    echo "<article><main>";
                     /* Echo content */
                     echo $parsedown->text($md_meta["DISPLAY_CONTENT"]);
                     /* Add article signature as microdata */
                     echo Md_ArticleSig($md_meta);
-                    echo "</main>";
+                    echo "</main></article>\n";
                     /* Add sharing buttons */
                     if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
-                ?>            
+                    /* Disqus commenting system */
+                    if(array_key_exists('DISQUS-SHORTNAME',$MD_SETTINGS))
+                        include_once "md-comment.php";
+                ?>
                 </div>
                 <div class="three columns">
                     <?php
@@ -140,10 +142,9 @@
                         ** Process the sidebar
                         */
                         include_once "md-sidebar.php";
-                        ?>            
+                    ?>            
                 </div>
             </div>
-            </article>
             <!-- To Do - Add also like options -->
             <?php
                 /*
