@@ -78,8 +78,13 @@
 <html lang="<?php if(array_key_exists('LANGUAGE',$MD_SETTINGS)) echo $MD_SETTINGS['LANGUAGE']; else echo 'en-GB'; ?>">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php
+            //Meta-data from page desciption
+            if(array_key_exists('description',$md_meta))
+                echo '<meta name="description" content="'.$md_meta['description'].'" />'."\n\t\t";
+            if(array_key_exists('author',$md_meta))
+                echo '<meta name="author" content="'.$md_meta['author'].'" />'."\n\t\t";
             //Set title
             echo "<title>".$title."</title>\n";
             //Set favicon
@@ -112,7 +117,7 @@
         ?>
     </head>
     <body>
-        <?php //Google analytics support
+<?php //Google analytics support
             include_once "md-analytics.php";
         ?>
         <div class="container">

@@ -53,7 +53,9 @@
 <html lang="<?php if(array_key_exists('LANGUAGE',$MD_SETTINGS)) echo $MD_SETTINGS['LANGUAGE']; else echo 'en-GB'; ?>">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="markdown-CMS" />
+        <meta name="description" content="The website index for Tek Eye. Lists all the articles and pages available on Tek Eye UK. A useful page to find an article in a given category, for example Android or computing." />
         <?php
             //Set title
             echo "<title>Index | ".$MD_SETTINGS['SITE_NAME']."</title>\n";
