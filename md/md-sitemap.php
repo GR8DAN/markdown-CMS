@@ -64,11 +64,11 @@
         <link rel="stylesheet" href="/md/css/md.css">
     </head>
     <body>
+        <?php //Google analytics support
+            include_once "md-analytics.php";
+        ?>
         <div class="container">
-            <?php
-                /*
-                ** Process the header
-                */
+            <?php // Process the header
                 include_once 'md-header.php';
             ?>
             <div class="row">
