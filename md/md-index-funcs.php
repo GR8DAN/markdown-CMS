@@ -77,8 +77,9 @@
             if(count($files)) {
                 //content exists
                 if ($links!='')
-                    $links.=', ';   //comma separate for neat display
-                $links.='<a href="#'.strtolower(str_replace(' ', '', $section)).'">'.$section.'</a>';  //add the anchor and attach to all anchors
+                    $links.=' | ';   //separate for neat display
+                //create jump link, use section link as a #tag hover
+                $links.='<a title="#'.strtolower(str_replace(' ', '', $section)).'" href="#'.strtolower(str_replace(' ', '', $section)).'">'.$section.'</a>';  //add the anchor and attach to all anchors
             }
         }
         return $links;
