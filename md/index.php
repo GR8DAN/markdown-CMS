@@ -9,7 +9,7 @@
     ** get the index file in that directory.
     */
     $request_url = Md_BrowserRequest();
-    
+
     /*
     ** Generate the Markdown filename. The content will be displayed
     ** from the Markdown file indicated by the URL.
@@ -40,6 +40,7 @@
     ** Check for the requested content.
     ** Otherwise 404 if file cannot be found.
     */
+    $is404 = FALSE;
     if(file_exists($filename)) {
         $content = file_get_contents($filename);
     } elseif($filename=="../index.md") {
@@ -85,6 +86,16 @@
                 echo '<meta name="description" content="'.$md_meta['description'].'" />'."\n\t\t";
             if(array_key_exists('author',$md_meta))
                 echo '<meta name="author" content="'.$md_meta['author'].'" />'."\n\t\t";
+            //Meta data for fbk comments
+            if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md_meta)) {
+                if(empty($md_meta["comments"])) {
+                    $md_meta["comments"]="no";
+                }
+                if(strtolower($md_meta['comments']) != "no") {
+                    //Set fbk comments admin property
+                    echo '<meta property="fb:admins" content="'.$MD_SETTINGS['FBK_ADMIN'].'" />'."\n\t\t";
+                }
+            }
             //Set title
             echo "<title>".$title."</title>\n";
             //Set favicon
@@ -118,8 +129,11 @@
     </head>
     <body>
 <?php //Google analytics support
-            include_once "md-analytics.php";
-        ?>
+include_once "md-analytics.php";
+// Facebook comments support
+if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md_meta))
+    include_once "md-fb-admin.php";       
+?>
         <div class="container">
             <?php // Process the header
                 include_once "md-header.php";
@@ -137,7 +151,8 @@
                     if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
                     /* Disqus commenting system */
-                    if(array_key_exists('DISQUS-SHORTNAME',$MD_SETTINGS))
+                    if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) || 
+                        array_key_exists('DISQUS-SHORTNAME',$MD_SETTINGS))
                         include_once "md-comment.php";
                 ?>
                 </div>
