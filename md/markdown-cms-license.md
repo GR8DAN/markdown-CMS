@@ -1,23 +1,23 @@
 /*
 Title: Licensing of ↓markdown↓ CMS
-Description: This is the license (licence) information Page for ↓markdown↓ CMS.
+Description: This is the license (licence) information Page for ↓markdown↓ CMS (mdCMS).
 Author: Daniel S. Fowler
 Tags: markdown, cms, license, licence, website, publishing
 Published: 2015-06-17
-Updated: 2017-01-23
+Updated: 2018-05-18
 */
 
 # License Terms for Use of the Software
 
-↓markdown↓ CMS - Copyright (c) 2015-2017 Mr.D.S.Fowler
+↓markdown↓ CMS - Copyright (c) 2015-2018 Mr.D.S.Fowler
 
 If you obtain a copy of ↓markdown↓ CMS or any derivative works you agree to the following conditions. If you do not agree do not use or distribute ↓markdown↓ CMS or works derived from it.
 
-The ↓markdown↓ CMS source code, data, graphics, documentation and configuration files are collectively known as the ↓markdown↓ CMS software and are provided as a single zip file, [markdown-cms.zip](http://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Source Code"). 
+The ↓markdown↓ CMS source code, data, graphics, documentation and configuration files are collectively known as the ↓markdown↓ CMS software and are provided as a single zip file, [markdown-cms.zip](https://tekeye.uk/downloads/markdown-cms.zip "↓markdown↓ CMS Source Code"). 
 
-The ↓markdown↓ CMS software is free (as in freedom) and any modifications to it must be readily attainable. The name ↓markdown↓ (a UK registered trademark) and the ↓markdown↓ CMS logos are used for support and marketing activities and must not be used for any derived works or modified versions of the software. ↓markdown↓ CMS software is licensed under the terms of the [GNU Affero General Public License V3](http://www.gnu.org/licenses/agpl-3.0.html "AGPLv3") (AGPLv3). A copy of the license is [provided with the software](agpl.txt "AGPLv3"). 
+The ↓markdown↓ CMS software is free (as in freedom) and any modifications to it must be readily attainable. The name ↓markdown↓ (a UK registered trademark) and the ↓markdown↓ CMS logos are used for support and marketing activities and must not be used for any derived works or modified versions of the software. ↓markdown↓ CMS software is licensed under the terms of the [GNU Affero General Public License V3](https://www.gnu.org/licenses/agpl-3.0.html "AGPLv3") (AGPLv3). A copy of the license is [provided with the software](agpl.txt "AGPLv3"). 
 
-The ↓markdown↓ CMS cascading style sheet (CSS) is derived from [Skeleton CSS](http://getskeleton.com/ "Skeleton CSS Home Page"), and [normalize.css](https://necolas.github.io/normalize.css/ "normalize.css Home Page") is used to baseline browser styles. ↓markdown↓ CMS converts text to HTML via [Parsedown](http://parsedown.org/ "Parsedown Home Page"). The XML sitemap feature is derived from [sitemap-php](https://github.com/o/sitemap-php "sitemap-php on GitHub"). A cookie message is displayed using [Silktide's Insites Cookie Consent](https://cookieconsent.insites.com/ "Cookie Consent Home"). All are licensed under The MIT License. If using [Disqus](https://disqus.com/ "Disqus Home Page") to manage comments see their [terms](https://help.disqus.com/customer/portal/articles/466260-terms-of-service "Disqus Terms of Service"). If using [Google Analytics](https://www.google.com/analytics/analytics/ "Google Analytics") see their [terms](https://www.google.com/analytics/terms/us.html "Google Analytics Terms of Service").
+The ↓markdown↓ CMS cascading style sheet (CSS) is derived from [Skeleton CSS](http://getskeleton.com/ "Skeleton CSS Home Page"), and [normalize.css](https://necolas.github.io/normalize.css/ "normalize.css Home Page") is used to baseline browser styles. ↓markdown↓ CMS converts text to HTML via [Parsedown](http://parsedown.org/ "Parsedown Home Page"). The XML sitemap feature is derived from [sitemap-php](https://github.com/o/sitemap-php "sitemap-php on GitHub"). A cookie message is displayed using [Silktide's Insites Cookie Consent](https://cookieconsent.insites.com/ "Cookie Consent Home"). All are licensed under The MIT License. If you enable the [Facebook comments plugin](https://developers.facebook.com/docs/plugins/comments/ "Facebook comments") then adhere to the [Facebook platform policy](https://developers.facebook.com/policy "Facebook platform policy"). If using [Disqus](https://disqus.com/ "Disqus Home Page") to manage comments see their [terms](https://help.disqus.com/customer/portal/articles/466260-terms-of-service "Disqus Terms of Service"). If using [Google Analytics](https://www.google.com/analytics/analytics/ "Google Analytics") see their [terms](https://www.google.com/analytics/terms/us.html "Google Analytics Terms of Service").
 
 ## The MIT License (MIT)
 
