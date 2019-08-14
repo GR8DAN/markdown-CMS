@@ -13,8 +13,6 @@
         $social_links .= '<a href="https://twitter.com/share?url='.$page_url.'" target="_blank"><img src="/md/images/tweet-but.png" alt="Submit to Twitter"  onmouseover="this.src=\'/md/images/tweet-but-hov.png\';" onmouseout="this.src=\'/md/images/tweet-but.png\';"/></a>';
         //Facebook
         $social_links .= '<a href="https://www.facebook.com/sharer/sharer.php?u='.$page_url.'" target="_blank"><img src="/md/images/face-but.png" alt="Submit to Facebook"  onmouseover="this.src=\'/md/images/face-but-hov.png\';" onmouseout="this.src=\'/md/images/face-but.png\';"/></a>';
-        //Google Plus
-        $social_links .= '<a href="https://plus.google.com/share?url='.$page_url.'" target="_blank"><img src="/md/images/gplus-but.png" alt="Submit to Google+"  onmouseover="this.src=\'/md/images/gplus-but-hov.png\';" onmouseout="this.src=\'/md/images/gplus-but.png\';"/></a>';
         //Linkedin
         $social_links .= '<a href="https://www.linkedin.com/shareArticle?mini=true&url='.$page_url.'&title='.$page_title.'" target="_blank"><img src="/md/images/linkin-but.png" alt="Submit to LinkedIn" onmouseover="this.src=\'/md/images/linkin-but-hov.png\';" onmouseout="this.src=\'/md/images/linkin-but.png\';"/></a>';
         //reddit
