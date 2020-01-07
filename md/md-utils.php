@@ -21,6 +21,10 @@
      */
     function Md_BrowserRequest() {
         $requestUrl = (isset($_SERVER['REQUEST_URI'])) ? $_SERVER['REQUEST_URI'] : '';
+        /* see if any url parameters have been added*/
+        /* e.g. Facebooks fbclid, delete them */
+        if ($_GET)
+            $requestUrl=strtok($requestUrl, '?');
         /* deal with trailing slash
         ** e.g. http://example.com/dir/ = http://example.com/dir/index
         */
