@@ -1,11 +1,11 @@
 /*
-* markdown cms CSS V0.2015.07.18
-* Copyright (c) 2015 Daniel S. Fowler
-* Derived from Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
+* markdown cms CSS V0.2020.02.08
+* Copyright (c) 2015-2020 Daniel S. Fowler
+* Derived from Skeleton V2.0.4:-
+* Copyright (c) 2014, Dave Gamache
 * www.getskeleton.com
 * Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
+* https://opensource.org/licenses/mit-license.php
 * 12/29/2014
 */
 
@@ -31,7 +31,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 1040px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 5px;
   box-sizing: border-box; }

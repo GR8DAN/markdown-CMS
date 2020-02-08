@@ -6,12 +6,12 @@
             echo "</a>";
         ?>
     </div>
-    <div class="three columns">
+    <div class="two columns">
         <?php
             echo "<h1 class=\"sitetitle\">{$MD_SETTINGS['SITE_NAME']}</h1>";
         ?>
     </div>
-    <div class="five columns">
+    <div class="six columns">
         <?php
             //Check for info.top file
             echo Md_ProcessText($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.$MD_SETTINGS['INFO_TOP_FILE'],$parsedown);
