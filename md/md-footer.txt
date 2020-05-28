@@ -12,5 +12,5 @@
 </small></div>
 <div class="three columns"><small>
     <a href="https://github.com/GR8DAN/markdown-CMS">GitHub</a><br/>
-    &copy; 2015-2017 Daniel S. Fowler
+    &copy; 2015-2020 Daniel S. Fowler
 </small></div>
