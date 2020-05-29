@@ -37,7 +37,7 @@ Technology should be easy and satisfying to use. The well established CMSs are g
 * Automatic web site backup via cloud storage, e.g. Dropbox, Google Drive or OneDrive.
 * Has a main article area and a sidebar for common content or advertising.
 * Social sharing buttons can be enabled.
-* Commenting on web pages can be added with the [Facebook comments plugin](https://developers.facebook.com/docs/plugins/comments/ "Facebook comments") or with [Disqus](https://disqus.com/ "Disqus Home Page").
+* Commenting on web pages can be added with the [Facebook comments plugin](https://developers.facebook.com/docs/plugins/comments/ "Facebook comments").
 * Includes support for [Google Analytics](https://www.google.com/analytics/analytics/ "Google Analytics").
 
 ![↓markdown↓ CMS Registered Trademark](/md/images/markdown-reg.png "↓markdown↓ CMS")

@@ -150,9 +150,8 @@ if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md
                     /* Add sharing buttons */
                     if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
-                    /* Disqus commenting system */
-                    if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) || 
-                        array_key_exists('DISQUS-SHORTNAME',$MD_SETTINGS))
+                    /* Commenting system */
+                    if(array_key_exists('FBK_ADMIN',$MD_SETTINGS))
                         include_once "md-comment.php";
                 ?>
                 </div>
