@@ -1,7 +1,6 @@
         <!-- Website feedback form -->
         <hr/>
         <h3>Do you have a question or comment about this article?</h3>
-        <p>(Alternatively, use the email address at the bottom of the web page.)</p>
         <form action="/md/md-fdbk-check.php" method="post" id="comment-form">
             <div>
                 <input type="hidden" name="referer" id="source" value="test">

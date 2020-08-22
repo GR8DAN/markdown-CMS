@@ -33,13 +33,6 @@
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
-<!-- Google Auto Ads-->
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>(adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-7374540092398389",
-    enable_page_level_ads: true
-});</script>
-<!-- End Google Auto Ads -->
     </head>
     <body>
         <?php //Google analytics support
