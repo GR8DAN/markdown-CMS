@@ -1,0 +1,22 @@
+        <!-- Website feedback form -->
+        <hr/>
+        <h3>Do you have a question or comment about this article?</h3>
+        <p>(Alternatively, use the email address at the bottom of the web page.)</p>
+        <form action="/md/md-fdbk-check.php" method="post" id="comment-form">
+            <div>
+                <input type="hidden" name="referer" id="source" value="test">
+                <script type="text/javascript">
+                    document.getElementById('source').setAttribute('value', document.URL);
+                </script>
+                <label style="width: 60px; display: inline-block;">Name:</label>
+                <input type="text" name="name" maxlength="50" required="">
+            </div>
+            <div style="margin-top:1em;">
+                <label style="width: 180px;">Question or Comment:</label>
+                <textarea style="vertical-align: top;" name="message"
+                          cols="70" rows="4"
+                          maxlength="1000" required=""></textarea>
+            </div>
+            <input type="submit" value="Send" class="g-recaptcha"
+                data-sitekey="RECAPTCHA_SITE_KEY" data-callback="submitForm">
+        </form>

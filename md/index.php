@@ -86,15 +86,13 @@
                 echo '<meta name="description" content="'.$md_meta['description'].'" />'."\n\t\t";
             if(array_key_exists('author',$md_meta))
                 echo '<meta name="author" content="'.$md_meta['author'].'" />'."\n\t\t";
-            //Meta data for fbk comments
-            if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md_meta)) {
-                if(empty($md_meta["comments"])) {
+            //Meta data for website comments feedback
+            if(array_key_exists('comments',$md_meta)) {
+                if(empty($md_meta["comments"]))
                     $md_meta["comments"]="no";
-                }
-                if(strtolower($md_meta['comments']) != "no") {
-                    //Set fbk comments admin property
-                    echo '<meta property="fb:admins" content="'.$MD_SETTINGS['FBK_ADMIN'].'" />'."\n\t\t";
-                }
+                if(strtolower($md_meta['comments']) != "no")
+                    //Get the comment recaptcha code
+                    echo Md_ProcessText("md-fdbk.txt", NULL);
             }
             //Set title
             echo "<title>".$title."</title>\n";
@@ -130,9 +128,6 @@
     <body>
 <?php //Google analytics support
 include_once "md-analytics.php";
-// Facebook comments support
-if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md_meta))
-    include_once "md-fb-admin.php";       
 ?>
         <div class="container">
             <?php // Process the header
@@ -150,9 +145,12 @@ if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md
                     /* Add sharing buttons */
                     if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
-                    /* Commenting system */
-                    if(array_key_exists('FBK_ADMIN',$MD_SETTINGS))
-                        include_once "md-comment.php";
+                    /* Website feedback system */
+                    if(array_key_exists('comments',$md_meta)) {
+                        if(strtolower($md_meta['comments']) != "no")
+                            //Get the comment html form
+                            echo str_replace('RECAPTCHA_SITE_KEY',$MD_SETTINGS['RECAPTCHA_SITE'],Md_ProcessText("md-fdbk-form.txt", NULL));
+                    }
                 ?>
                 </div>
                 <div class="three columns">
@@ -164,7 +162,6 @@ if(array_key_exists('FBK_ADMIN',$MD_SETTINGS) && array_key_exists('comments',$md
                     ?>            
                 </div>
             </div>
-            <!-- To Do - Add also like options -->
             <?php
                 /*
                 ** Process the footer

@@ -1,0 +1,7 @@
+        <!-- For website feedback user verification -->
+        <script src="https://www.google.com/recaptcha/api.js" defer></script>
+        <script>
+            function submitForm() {
+                document.getElementById("comment-form").submit();
+            }
+        </script>
