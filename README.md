@@ -2,7 +2,7 @@
 
 A simple, fast, lean, flat file (no database) CMS for easy and quick website generation and publishing. If you can type text you can build a website.
 
-Version: v0.8.120200823
+Version: v0.8.120200829
 
 ## Requirements
 
@@ -35,7 +35,7 @@ Upload an image for the website logo. Copy **md/md-config.php** to **site-config
 
 ## Version History
 
-* v0.8.120200823 - Replace Facebook comments plugin support with a HTML form for web page feedback. Add the last normalise.css minor update.
+* v0.8.120200829 - Replace Facebook comments plugin support with a HTML form for web page feedback. Add the last normalise.css minor update. Add most recent version of Parsedown.php. Silktide's cookie consent solution moved to Osano.
 * v0.8.020200528 - Remove support for Disqus due to intrusive advertising.
 * v0.7.020200208 - Bump screen maximum width for modern displays. Stop Facebook query causing error. Remove G+ social media button.
 * v0.6.020170121 - Add support for social media sharing buttons, Disqus and Facebook commenting, and Google Analytics. Update normalize CSS, Parsedown, and cookie consent libraries. 

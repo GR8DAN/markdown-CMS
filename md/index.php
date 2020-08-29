@@ -120,9 +120,10 @@
                 }
                 echo "<script>hljs.initHighlightingOnLoad();</script>";
             }
-            //Handle cookie consent (https://cookieconsent.insites.com/)
+            //Handle cookie consent, https://www.osano.com/cookieconsent/download/
             if(!array_key_exists('NO_COOKIE_MESSAGE',$MD_SETTINGS))
-                echo file_get_contents("md-cookie.txt");
+                //Add cdn hosted cookie consent css
+                echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css\">\n";
         ?>
     </head>
     <body>
@@ -177,5 +178,10 @@ include_once "md-analytics.php";
             ?>
             </div>
         </div>
+        <?php
+            //Add coookie consent script if enabled
+            if(!array_key_exists('NO_COOKIE_MESSAGE',$MD_SETTINGS))
+                echo file_get_contents("md-cookie.txt");
+        ?>
     </body>
 </html>

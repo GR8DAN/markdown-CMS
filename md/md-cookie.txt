@@ -1,7 +1,5 @@
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
-window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
@@ -11,5 +9,5 @@ window.cookieconsent.initialise({
       "background": "#f1d600"
     }
   }
-})});
+});
 </script>
