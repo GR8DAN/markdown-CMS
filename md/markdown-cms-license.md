@@ -1,6 +1,6 @@
 /*
 Title: Licensing of ↓markdown↓ CMS
-Description: This is the license (licence) information Page for ↓markdown↓ CMS (mdCMS).
+Description: This is the license (licence) information Page for ↓markdown↓ CMS (md-CMS).
 Author: Daniel S. Fowler
 Tags: markdown, cms, license, licence, website, publishing
 Published: 2015-06-17
