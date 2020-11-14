@@ -1,11 +1,11 @@
 /*
-* markdown cms CSS V0.2020.02.08
+* markdown cms CSS V0.2020.11.14
 * Copyright (c) 2015-2020 Daniel S. Fowler
 * Derived from Skeleton V2.0.4:-
-* Copyright (c) 2014, Dave Gamache
+* Copyright 2014, Dave Gamache
 * www.getskeleton.com
 * Free to use under the MIT license.
-* https://opensource.org/licenses/mit-license.php
+* http://www.opensource.org/licenses/mit-license.php
 * 12/29/2014
 */
 
@@ -304,14 +304,22 @@ li {
 
 /* Main Navigation Menu
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-nav ul {
-    list-style: none; float: left; width: 100%; background-color: #2e8dd8;}
-nav li {
-    float: left; margin-left: 2rem; text-align: center; padding-top: 0.6rem;}
-nav li a {
-    color: #FFF;}
-nav li a:hover {
-    color: #000;}
+/* Change unordered list items in a nav to inline */
+nav > ul > li {display:inline-block;}
+/* Drop menu under its parent */
+nav ul li ul {position:absolute;}
+/* Remove list padding and bullet points */
+nav ul {padding:0 0 0 6pt;list-style:none;background-color:#2e8dd8;margin:0;}
+/* Dropdown list invisible until... */
+nav ul li ul {visibility:hidden;}
+/* .. the parent list is hovered over */                  
+nav ul li:hover > ul {visibility:visible;}
+/* Format the menu's look */
+nav li {background:#2e8dd8;padding:6pt;margin-bottom:0;}
+nav a {text-decoration:none;color:white;}
+nav li a:hover {color:black;}
+nav li:hover {background:#2e8dd8;}
+nav ul li ul li {margin-top:3pt;}
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

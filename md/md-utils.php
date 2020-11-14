@@ -65,21 +65,30 @@
     }
 
     /**
-	 * Function Md_ProcessMenu reads the menu definition file (main.menu.md)
-     * in the website root. Just put a Markdown formatted list that file, e.g.:
+	 * Function Md_ProcessMenu reads the menu definition file from the website root.
+     * Either a text file with HTML for an unordered list called menu.main.txt, which
+     * can support one level of drop down, or a main.menu.md to use a Markdown list, e.g.:
      *  * [Home](/ "Home Page")
      *  * [Shop](/shop "Our Shop")
      *  * [About](/about "About Us")
-     * If the menu definition is not present it outputs the defualt menu.
+     * If the menu definition is not present it outputs the default menu.
 	 */
 	function Md_ProcessMenu($markdownParser) {
-        $menu_filename=dirname(__DIR__)."/menu.main.md";
+        /* See if HTML formatted menu */
+        $menu_filename=dirname(__DIR__)."/menu.main.txt";
         if(!file_exists($menu_filename)) {
-            /* No menu file provided, use default */
-            $menu_filename="md-menu.md";
-        }
+            /* No HTML format menu, try Markdown */
+            $menu_filename=dirname(__DIR__)."/menu.main.md";
+            if(!file_exists($menu_filename)) {
+                /* No menu file provided, use default */
+                $menu_filename="md-menu.md";
+            }
+        }      
         echo "<nav>";
-        echo $markdownParser->text(file_get_contents($menu_filename));
+        if(pathinfo($menu_filename, PATHINFO_EXTENSION)=='md')
+            echo $markdownParser->text(file_get_contents($menu_filename));
+        else
+            echo file_get_contents($menu_filename);
         echo "</nav>";
 	}
 
