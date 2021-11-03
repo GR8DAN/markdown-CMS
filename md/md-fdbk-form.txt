@@ -1,6 +1,7 @@
         <!-- Website feedback form -->
         <hr/>
         <h3>Do you have a question or comment about this article?</h3>
+        <p>(Alternatively, use the email address at the bottom of the web page.)</p>
         <form action="/md/md-fdbk-check.php" method="post" id="comment-form">
             <div>
                 <input type="hidden" name="referer" id="source" value="test">
@@ -12,9 +13,13 @@
             </div>
             <div style="margin-top:1em;">
                 <label style="width: 180px;">Question or Comment:</label>
-                <textarea style="vertical-align: top;" name="message"
+                <textarea style="vertical-align: top; max-width: 100%;" name="message"
                           cols="70" rows="4"
                           maxlength="1000" required=""></textarea>
+                <p><img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" width="24" height="24"
+                    style="vertical-align:middle"/>&nbsp;<small>This site is protected by reCAPTCHA and the Google 
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and 
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.</small></p>
             </div>
             <input type="submit" value="Send" class="g-recaptcha"
                 data-sitekey="RECAPTCHA_SITE_KEY" data-callback="submitForm">

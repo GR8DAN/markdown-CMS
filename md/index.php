@@ -124,12 +124,11 @@
             if(!array_key_exists('NO_COOKIE_MESSAGE',$MD_SETTINGS))
                 //Add cdn hosted cookie consent css
                 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css\">\n";
+            //Optional Google analytics support
+            include_once "md-analytics.php";
         ?>
     </head>
     <body>
-<?php //Google analytics support
-include_once "md-analytics.php";
-?>
         <div class="container">
             <?php // Process the header
                 include_once "md-header.php";

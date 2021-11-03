@@ -1,5 +1,5 @@
 /*
-* markdown cms CSS V0.2020.11.14
+* markdown cms CSS V0.2021.09.07
 * Copyright (c) 2015-2020 Daniel S. Fowler
 * Derived from Skeleton V2.0.4:-
 * Copyright 2014, Dave Gamache
@@ -54,61 +54,61 @@
     width: 95%; }
   .column,
   .columns {
-    margin-left: 1%; }
+    margin-left: 0.4%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
 
   .one.column,
-  .one.columns                    { width: 7.41666666667%; }
-  .two.columns                    { width: 15.8333333333%; }
-  .three.columns                  { width: 24.25%;         }
-  .four.columns                   { width: 32.6666666667%; }
-  .five.columns                   { width: 41.0833333331%; }
-  .six.columns                    { width: 49.5%;          }
-  .seven.columns                  { width: 57.9166666665%; }
-  .eight.columns                  { width: 66.3333333332%; }
-  .nine.columns                   { width: 74.7499999999%; }
-  .ten.columns                    { width: 83.1666666666%; }
-  .eleven.columns                 { width: 91.5833333333%; }
+  .one.columns                    { width: 7.96666666667%; }
+  .two.columns                    { width: 16.3333333333%; }
+  .three.columns                  { width: 24.7%;          }
+  .four.columns                   { width: 33.0666666667%; }
+  .five.columns                   { width: 45.6166666667%; }
+  .six.columns                    { width: 49.8%;          }
+  .seven.columns                  { width: 53.9833333333%; }
+  .eight.columns                  { width: 66.5333333333%; }
+  .nine.columns                   { width: 74.9%; }
+  .ten.columns                    { width: 82.2666666667%; }
+  .eleven.columns                 { width: 91.6333333333%; }
   .twelve.columns                 { width: 100%; margin-left: 0; }
 
-  .one-third.column               { width: 30.6666666667%; }
-  .two-thirds.column              { width: 65.3333333333%; }
+  .one-third.column               { width: 33.0666666667%; }
+  .two-thirds.column              { width: 66.5333333333%; }
 
-  .one-half.column                { width: 49.5%; }
+  .one-half.column                { width: 49.8%; }
 
   /* Offsets */
   .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 7.41666666667%; }
+  .offset-by-one.columns          { margin-left: 8.36666666667%; }
   .offset-by-two.column,
-  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-two.columns          { margin-left: 16.7333333333%; }
   .offset-by-three.column,
-  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-three.columns        { margin-left: 25.1%;          }
   .offset-by-four.column,
-  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-four.columns         { margin-left: 33.4666666667%; }
   .offset-by-five.column,
-  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-five.columns         { margin-left: 46.0166666667%; }
   .offset-by-six.column,
-  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-six.columns          { margin-left: 50.2%         ; }
   .offset-by-seven.column,
-  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-seven.columns        { margin-left: 54.3833333333%; }
   .offset-by-eight.column,
-  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-eight.columns        { margin-left: 66.9333333333%; }
   .offset-by-nine.column,
-  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-nine.columns         { margin-left: 75.3%;          }
   .offset-by-ten.column,
-  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-ten.columns          { margin-left: 82.6666666667%; }
   .offset-by-eleven.column,
-  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  .offset-by-eleven.columns       { margin-left: 92.0333333333%; }
 
   .offset-by-one-third.column,
-  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-one-third.columns    { margin-left: 33.4666666667%; }
   .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+  .offset-by-two-thirds.columns   { margin-left: 66.9333333333%; }
 
   .offset-by-one-half.column,
-  .offset-by-one-half.columns     { margin-left: 52%; }
+  .offset-by-one-half.columns     { margin-left: 50.2%; }
 
 }
 
@@ -120,7 +120,7 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
 body {
-  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.6em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -158,6 +158,8 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: #2E8DD8; }
+a[href] {
+  word-wrap:break-word; }
 a:link {
     text-decoration: none; }
 a:hover {
@@ -323,27 +325,39 @@ nav ul li ul li {margin-top:3pt;}
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+pre {
+    white-space: pre-wrap; }
 code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
   font-size: 90%;
-  white-space: nowrap;
+  white-space: pre-wrap;
+  word-wrap:break-word;
   background: #F1F1F1;
   border: 1px solid #E1E1E1;
   border-radius: 4px; }
 pre > code {
   display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre; }
-
+  padding: 1rem 1.5rem; }
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
-td {
-  padding: 12px 15px;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed; }
+table caption {
+  font-size: 1.2em;
+  margin: .25em; }
+table th,
+table td {
+  padding: .5em;
   text-align: left;
+  word-wrap:break-word;
   border-bottom: 1px solid #E1E1E1; }
+table th {
+  font-size: .85em;
+  letter-spacing: .1em; }
 th:first-child,
 td:first-child {
   padding-left: 0; }
@@ -406,6 +420,10 @@ hr {
   content: "";
   display: table;
   clear: both; }
+
+/* Hide reCAPTCHA badge, uses fixed branding */
+/* Follows https://developers.google.com/recaptcha/docs/faq */
+.grecaptcha-badge { visibility: hidden; }
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
