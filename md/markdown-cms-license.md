@@ -1,15 +1,15 @@
-/*
+<!--
 Title: Licensing of ↓markdown↓ CMS
-Description: This is the license (licence) information Page for ↓markdown↓ CMS (md-CMS).
+Description: This is the license (licence) information page for ↓markdown↓ CMS (md-CMS).
 Author: Daniel S. Fowler
-Tags: markdown, cms, license, licence, website, publishing
+Tags: markdown, cms, license, licence, website, publishing, open, source
 Published: 2015-06-17
-Updated: 2020-08-22
-*/
+Updated: 2022-02-27
+-->
 
 # License Terms for Use of the Software
 
-↓markdown↓ CMS - Copyright (c) 2015-2020 Mr.D.S.Fowler
+↓markdown↓ CMS - Copyright (c) 2015-2022 Mr.D.S.Fowler
 
 If you obtain a copy of ↓markdown↓ CMS or any derivative works you agree to the following conditions. If you do not agree do not use or distribute ↓markdown↓ CMS or works derived from it.
 
