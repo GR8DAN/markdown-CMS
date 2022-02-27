@@ -81,19 +81,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php
-            //Meta-data from page desciption
-            if(array_key_exists('description',$md_meta))
-                echo '<meta name="description" content="'.$md_meta['description'].'" />'."\n\t\t";
-            if(array_key_exists('author',$md_meta))
-                echo '<meta name="author" content="'.$md_meta['author'].'" />'."\n\t\t";
-            //Meta data for website comments feedback
-            if(array_key_exists('comments',$md_meta)) {
-                if(empty($md_meta["comments"]))
-                    $md_meta["comments"]="no";
-                if(strtolower($md_meta['comments']) != "no")
-                    //Get the comment recaptcha code
-                    echo Md_ProcessText("md-fdbk.txt", NULL);
-            }
+            //Add any meta data tags
+            Md_ProcessMeta($md_meta);
             //Set title
             echo "<title>".$title."</title>\n";
             //Set favicon
@@ -136,12 +125,12 @@
             <div class="row">
                 <div class="nine columns">
                 <?php
-                    echo "<article><main>";
+                    echo "<main><article>";
                     /* Echo content */
-                    echo $parsedown->text($md_meta["DISPLAY_CONTENT"]);
+                    echo $parsedown->text($md_meta["DISPLAY_CONTENT"])."\n";
                     /* Add article signature as microdata */
                     echo Md_ArticleSig($md_meta);
-                    echo "</main></article>\n";
+                    echo "</article></main>\n";
                     /* Add sharing buttons */
                     if(array_key_exists('SHARE_BUTTONS',$MD_SETTINGS) && !$is404)
                         include_once "md-share.php";
