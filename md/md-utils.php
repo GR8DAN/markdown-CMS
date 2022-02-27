@@ -182,6 +182,77 @@
         return $md_meta;
     }
 
+    /**
+	 * Function str_replace_limit replaces strings in strings with
+     * a limit, e.g. 2 times, 3 times, ...
+     * see https://stackoverflow.com/questions/1252693
+     * @param $search what to search for
+     * @param $replace what to replace with
+     * @param $string target string
+     * @param $limit how many times
+	 */
+    function str_replace_limit($search, $replace, $string, $limit = 1) {
+        $pos = strpos($string, $search);
+        if ($pos === false) {
+            return $string;
+        }
+        $searchLen = strlen($search);
+        for ($i = 0; $i < $limit; $i++) {
+            $string = substr_replace($string, $replace, $pos, $searchLen);
+            $pos = strpos($string, $search);
+            if ($pos === false) {
+                break;
+            }
+        }
+        return $string;
+    }
+
+    /**
+	 * Function Md_ProcessMeta sets the meta tags in the HTML,
+     * @param $meta_data contains the key value pairs for the name
+     * and content (<meta name="data_a" content="data_b" />)
+	 */
+     function Md_ProcessMeta($meta_data) {
+         //Meta-data for page desciption
+        if(array_key_exists('description',$meta_data))
+            echo '<meta name="description" content="'.$meta_data['description'].'" />'."\n\t\t";
+        //Meta-data for author
+        if(array_key_exists('author',$meta_data))
+            echo '<meta name="author" content="'.$meta_data['author'].'" />'."\n\t\t";
+        //Meta-data for keywords
+        if(array_key_exists('tags',$meta_data))
+            echo '<meta name="keywords" content="'.$meta_data['tags'].'" />'."\n\t\t";
+        //Meta-data for Facebook analytics id
+        if(array_key_exists('fb_app_id',$meta_data))
+            echo '<meta property="fb:app_id" content="'.$meta_data['tags'].'" />'."\n\t\t";
+        //Meta-data for Google Scholar, Facebook Open Graph and Twitter Cards
+        foreach ($meta_data as $key => $value) {
+            //Google Scholar
+            if(substr($key, 0, strlen('citation_')) === 'citation_')
+                echo '<meta name="'.$key.'" content="'.$value.'" />'."\n\t\t";
+            //Twitter Card
+            elseif(substr($key, 0, strlen('twitter_')) === 'twitter_') {
+                //underscores to colons
+                $key=str_replace_limit('_',':',$key,2);   //only first two, some Twitter tags have two colons
+                echo '<meta name="'.$key.'" content="'.$value.'" />'."\n\t\t";
+            }
+            //Facebook Opengraph
+            elseif(substr($key, 0, strlen('og_')) === 'og_') {
+                //underscores to colons
+                $key=str_replace_limit('_',':',$key,2);   //only first two, some Open Graph tags have two colons
+                //Facebook meta uses property not name attribute
+                echo '<meta property="'.$key.'" content="'.$value.'" />'."\n\t\t";
+            } 
+        }
+        //Meta data for website comments feedback
+        if(array_key_exists('comments',$meta_data)) {
+            if(empty($meta_data["comments"]))
+                $meta_data["comments"]="no";
+            if(strtolower($meta_data['comments']) != "no")
+                //Get the comment recaptcha code
+                echo Md_ProcessText("md-fdbk.txt", NULL);
+        }
+     }
 
     /**
 	 * Function Md_ProcessText reads the given file returns the HTML,
@@ -230,10 +301,8 @@
             if(!empty($article_data["archived"]))
                 $sig .= 'Archived:<time>'.$article_data["archived"].'</time>';
         }
-        return $sig."</small></p></div>";
+        return $sig."</small></p></div>\n";
     }
-
-
 
     /**
 	 * Function OneToTenInEnglish converts an integer 0-9 to english name (one, two, etc.)
