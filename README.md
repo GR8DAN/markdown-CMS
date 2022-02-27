@@ -2,7 +2,7 @@
 
 A simple, fast, lean, flat file (no database) CMS for easy and quick website generation and publishing. If you can type text you can build a website.
 
-Version: v0.8.220211103
+Version: v0.8.320220227
 
 ## Requirements
 
@@ -35,6 +35,7 @@ Upload an image for the website logo. Copy **md/md-config.php** to **site-config
 
 ## Version History
 
+* v0.8.320220227 - Add support for generic meta data tags (e.g., Twitter, Open Graph, Google Scholar), correct HTML5 main and article element ordering.
 * v0.8.220211103 - CSS changes to improve cellphone support (reduce white space and table space, stop text overrun for pre and code, display reCAPTCHA badge when feedback form used, stop feedback form overrun), update the Google Analytics code, update copyright year.
 * v0.8.120201114 - Add support for a single dropdown menu off the first level menu.
 * v0.8.120200829 - Replace Facebook comments plugin support with a HTML form for web page feedback. Add the last normalise.css minor update. Add most recent version of Parsedown.php. Silktide's cookie consent solution moved to Osano.
