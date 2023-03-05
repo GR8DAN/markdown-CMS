@@ -64,11 +64,10 @@
         ?>
         <link rel="stylesheet" href="/md/css/normalize.css">
         <link rel="stylesheet" href="/md/css/md.css">
+        <?php //Google analytics support
+            include_once "md-analytics.php";?>
     </head>
     <body>
-        <?php //Google analytics support
-            include_once "md-analytics.php";
-        ?>
         <div class="container">
             <?php // Process the header
                 include_once 'md-header.php';
