@@ -48,7 +48,6 @@
     //Generate index sections and titles
     $dirindex = Md_SectionLinks($dirs,$INDEX_RENAME);
 ?>
-
 <!DOCTYPE html>
 <html lang="<?php if(array_key_exists('LANGUAGE',$MD_SETTINGS)) echo $MD_SETTINGS['LANGUAGE']; else echo 'en-GB'; ?>">
     <head>
@@ -77,8 +76,8 @@
                     <h1>Alphabetical Index</h1>
     <?php
     // Code to produce the list of links to content
-    echo '<h2>Categories</h2>';
-    echo '<strong>'.Md_SectionAnchors($dirindex,$MD_SETTINGS['EXTENSIONS']).'</strong>';
+    echo '<h2>Categories</h2>'."\n";
+    echo '<strong>'.Md_SectionAnchors($dirindex,$MD_SETTINGS['EXTENSIONS']).'</strong>'."\n";
     //For all sections add the local page links and 
     //each page associated with it.
     $total_pages = 0;
@@ -88,8 +87,8 @@
         //if there are files then process them
         if(count($files)) {
             //add the link anchor from the tag list
-            echo '<hr/>';
-            echo '<a name="'.strtolower(str_replace(' ', '', $tag)).'"></a>'.'<h3>'.$tag.'</h3>';
+            echo '<hr/>'."\n";
+            echo '<a name="'.strtolower(str_replace(' ', '', $tag)).'"></a>'.'<h3>'.$tag.'</h3>'."\n";
             //add page titles (or URLs) to an array and URLs to XML sitemap (if active)
             if(isset($xmlmap))
                 $pagetitles=Md_MakeContentLinks($files, $href, $xmlmap);
@@ -97,13 +96,13 @@
                 $pagetitles=Md_MakeContentLinks($files, $href, NULL);
             //generate links to page with title as text
             foreach ($pagetitles as $linkURL => $pagetitle) {
-                echo '<a href="'.$linkURL.'">'.$pagetitle.'</a><br/>';
+                echo '<a href="'.$linkURL.'">'.$pagetitle.'</a><br/>'."\n";
                 $total_pages++;
             }
         }
     }
     //Echo number of pages
-     echo '<hr/><p><small>Total Pages:'.$total_pages.'</small></p>';
+     echo '<hr/><p><small>Total Pages:'.$total_pages.'</small></p>'."\n";
     //complete xml site if active
     if(isset($xmlmap)) {
         //add the full site Index page itself
