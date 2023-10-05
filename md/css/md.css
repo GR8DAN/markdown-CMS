@@ -385,7 +385,8 @@ ul,
 ol,
 form {
   margin-bottom: 1.2rem; }
-img {
+img,
+video {
   max-width: 100%;
   height:  auto}
 
